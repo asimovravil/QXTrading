@@ -72,11 +72,21 @@ class OnboardingViewController: UIViewController {
     }
     
     func updateOnbo(_ onboList: Int) {
-        let onboList = onbo[onboList]
-        onboLabel.text = onboList.textTitle
-        onboSubLabel.text = onboList.textSubTitle
-        onboImage.image = UIImage(named: onboList.imageName)
+        let onboItem = onbo[onboList]
+        onboLabel.text = onboItem.textTitle
+        onboSubLabel.text = onboItem.textSubTitle
+        onboImage.image = UIImage(named: onboItem.imageName)
+
+        switch onboList {
+        case onbo.count - 1:
+            onboButton.setImage(UIImage(named: "createAccount"), for: .normal)
+        case onbo.count - 2:
+            onboButton.setImage(UIImage(named: "letsGetStarted"), for: .normal)
+        default:
+            onboButton.setImage(UIImage(named: "startLearning"), for: .normal)
+        }
     }
+
     
     @objc func onboButtonNext() {
         if onboCurrentPage < onbo.count - 1 {
@@ -87,12 +97,6 @@ class OnboardingViewController: UIViewController {
         
         updateOnbo(onboCurrentPage)
         onboPageControll.currentPage = onboCurrentPage
-        
-        if onboCurrentPage == onbo.count - 1 {
-            onboButton.setImage(UIImage(named: "startLearning"), for: .normal)
-        } else {
-            onboButton.setImage(UIImage(named: "letsGetStarted"), for: .normal)
-        }
     }
     
     private func constraintsSetup() {
