@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class OnboardingViewController: UIViewController {
     
@@ -94,6 +95,7 @@ class OnboardingViewController: UIViewController {
         view.addSubview(accountTextField)
         
         onboButton.addTarget(self, action: #selector(onboButtonNext), for: .touchUpInside)
+        accountButton.addTarget(self, action: #selector(changeProfileImage), for: .touchUpInside)
         
         constraintsSetup()
         updateOnbo(onboCurrentPage)
@@ -103,6 +105,9 @@ class OnboardingViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         accountTextField.layer.cornerRadius = 20
+        
+        accountButton.layer.cornerRadius = accountButton.bounds.size.width / 2
+        accountButton.clipsToBounds = true
     }
     
     func updateOnbo(_ onboList: Int) {
@@ -174,6 +179,92 @@ class OnboardingViewController: UIViewController {
             accountTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             accountTextField.heightAnchor.constraint(equalToConstant: 63),
         ])
+    }
+}
+
+extension OnboardingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @objc private func changeProfileImage() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        if status == .notDetermined {
+            PHPhotoLibrary.requestAuthorization { status in
+                if status == .authorized {
+                    self.presentImagePicker()
+                }
+            }
+        } else if status == .authorized {
+            self.presentImagePicker()
+        }
+    }
+
+    func presentImagePicker() {
+        DispatchQueue.main.async {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    // В методе, где вы устанавливаете изображение на кнопку:
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            let resizedImage = resizeImage(image: selectedImage, targetSize: accountButton.bounds.size)
+
+            // Сохранение изображения
+            saveImageToLocalStorage(resizedImage)
+
+            // Установка изображения на кнопку
+            accountButton.setImage(resizedImage, for: .normal)
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func saveImageToLocalStorage(_ image: UIImage) {
+        if let imageData = image.pngData() {
+            UserDefaults.standard.set(imageData, forKey: "userProfileImage")
+        }
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Определяем "масштабный коэффициент" как минимум из двух отношений
+        _ = min(widthRatio, heightRatio)
+
+        let scaledImageSize = CGSize(width: 140, height: 140)
+
+        let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+        let scaledImage = renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+        }
+
+        return scaledImage
+    }
+}
+
+extension OnboardingViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == accountTextField, let username = textField.text {
+            UserDefaults.standard.set(username, forKey: "username")
+            print("Saved username: \(username)")
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func keyboardTapped() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
