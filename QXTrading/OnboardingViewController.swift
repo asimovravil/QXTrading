@@ -96,6 +96,7 @@ class OnboardingViewController: UIViewController {
         
         onboButton.addTarget(self, action: #selector(onboButtonNext), for: .touchUpInside)
         accountButton.addTarget(self, action: #selector(changeProfileImage), for: .touchUpInside)
+        accountTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
         constraintsSetup()
         updateOnbo(onboCurrentPage)
@@ -108,6 +109,12 @@ class OnboardingViewController: UIViewController {
         
         accountButton.layer.cornerRadius = accountButton.bounds.size.width / 2
         accountButton.clipsToBounds = true
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if onboCurrentPage == onbo.count - 1 {
+            onboButton.isEnabled = textField.text?.count ?? 0 >= 3
+        }
     }
     
     func updateOnbo(_ onboList: Int) {
@@ -125,6 +132,10 @@ class OnboardingViewController: UIViewController {
             onboButton.setImage(R.image.letsGetStarted(), for: .normal)
         default:
             onboButton.setImage(R.image.startLearning(), for: .normal)
+        }
+        
+        if onboList == onbo.count - 1 {
+            onboButton.isEnabled = accountTextField.text?.count ?? 0 >= 3
         }
     }
 
