@@ -25,6 +25,7 @@
 		F1285E482B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3E2B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf */; };
 		F1285E492B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3F2B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf */; };
 		F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */; };
+		F1285E532B19D91000CCDCB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E522B19D91000CCDCB9 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F1285E3E2B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
 		F1285E3F2B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboList.swift; sourceTree = "<group>"; };
+		F1285E522B19D91000CCDCB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				F1285E1B2B18A4C000CCDCB9 /* SceneDelegate.swift */,
 				F1285E1D2B18A4C000CCDCB9 /* OnboardingViewController.swift */,
 				F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */,
+				F1285E522B19D91000CCDCB9 /* HomeViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
 				F1285E272B18A4C100CCDCB9 /* Info.plist */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1285E532B19D91000CCDCB9 /* HomeViewController.swift in Sources */,
 				F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
