@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController {
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
-        label.font = UIFont(name: "IBMPlexSans-SemiBold", size: 40)
+        label.font = R.font.ibmPlexSansSemiBold(size: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,7 +35,7 @@ class OnboardingViewController: UIViewController {
         label.textColor = .white
         label.numberOfLines = 0
         label.alpha = 0.80
-        label.font = UIFont(name: "IBMPlexSans-Regular", size: 16)
+        label.font = R.font.ibmPlexSans(size: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -50,12 +50,36 @@ class OnboardingViewController: UIViewController {
     
     private let onboButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "startLearning"), for: .normal)
-        button.addTarget(self, action: #selector(onboButtonNext), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
+    private let accountButton: UIButton = {
+        let button = UIButton()
+        button.setImage(R.image.accountCamera(), for: .normal)
+        button.isHidden = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let accountTextField: UITextField = {
+        let textField = UITextField()
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.50),
+            NSAttributedString.Key.font: R.font.ibmPlexSansMedium(size: 24)!
+        ]
+        textField.attributedPlaceholder = NSAttributedString(string: "Your Name", attributes: attributes)
+        textField.font = R.font.ibmPlexSansMedium(size: 24)
+        textField.textAlignment = .center
+        textField.borderStyle = .none
+        textField.textColor = .white
+        textField.keyboardType = .default
+        textField.autocorrectionType = .no
+        textField.isHidden = true
+        textField.backgroundColor = R.color.colorTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +90,19 @@ class OnboardingViewController: UIViewController {
         view.addSubview(onboSubLabel)
         view.addSubview(onboPageControll)
         view.addSubview(onboButton)
+        view.addSubview(accountButton)
+        view.addSubview(accountTextField)
+        
+        onboButton.addTarget(self, action: #selector(onboButtonNext), for: .touchUpInside)
         
         constraintsSetup()
         updateOnbo(onboCurrentPage)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        accountTextField.layer.cornerRadius = 20
     }
     
     func updateOnbo(_ onboList: Int) {
@@ -79,11 +113,13 @@ class OnboardingViewController: UIViewController {
 
         switch onboList {
         case onbo.count - 1:
-            onboButton.setImage(UIImage(named: "createAccount"), for: .normal)
+            onboButton.setImage(R.image.createAccount(), for: .normal)
+            accountButton.isHidden = false
+            accountTextField.isHidden = false
         case onbo.count - 2:
-            onboButton.setImage(UIImage(named: "letsGetStarted"), for: .normal)
+            onboButton.setImage(R.image.letsGetStarted(), for: .normal)
         default:
-            onboButton.setImage(UIImage(named: "startLearning"), for: .normal)
+            onboButton.setImage(R.image.startLearning(), for: .normal)
         }
     }
 
@@ -118,6 +154,14 @@ class OnboardingViewController: UIViewController {
             
             onboButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -55),
             onboButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            accountButton.bottomAnchor.constraint(equalTo: accountTextField.topAnchor, constant: -32),
+            accountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            accountTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            accountTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            accountTextField.bottomAnchor.constraint(equalTo: onboLabel.topAnchor, constant: -175),
+            accountTextField.heightAnchor.constraint(equalToConstant: 63),
         ])
     }
 }
