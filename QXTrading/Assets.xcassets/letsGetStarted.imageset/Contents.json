@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "letsGetStarted.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

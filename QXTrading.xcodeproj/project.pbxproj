@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E192B18A4C000CCDCB9 /* AppDelegate.swift */; };
 		F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E1B2B18A4C000CCDCB9 /* SceneDelegate.swift */; };
-		F1285E1E2B18A4C000CCDCB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E1D2B18A4C000CCDCB9 /* ViewController.swift */; };
-		F1285E212B18A4C000CCDCB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1285E1F2B18A4C000CCDCB9 /* Main.storyboard */; };
+		F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E1D2B18A4C000CCDCB9 /* OnboardingViewController.swift */; };
 		F1285E232B18A4C100CCDCB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1285E222B18A4C100CCDCB9 /* Assets.xcassets */; };
 		F1285E262B18A4C100CCDCB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */; };
+		F1285E2F2B18A4D800CCDCB9 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = F1285E2E2B18A4D800CCDCB9 /* RswiftLibrary */; };
+		F1285E312B18A4D800CCDCB9 /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = F1285E302B18A4D800CCDCB9 /* rswift */; };
+		F1285E402B19C30F00CCDCB9 /* IBMPlexSans-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E362B19C30F00CCDCB9 /* IBMPlexSans-Text.ttf */; };
+		F1285E412B19C30F00CCDCB9 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E372B19C30F00CCDCB9 /* IBMPlexSans-Medium.ttf */; };
+		F1285E422B19C30F00CCDCB9 /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E382B19C30F00CCDCB9 /* IBMPlexSans-SemiBold.ttf */; };
+		F1285E432B19C30F00CCDCB9 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F1285E392B19C30F00CCDCB9 /* OFL.txt */; };
+		F1285E442B19C30F00CCDCB9 /* IBMPlexSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3A2B19C30F00CCDCB9 /* IBMPlexSans-ExtraLight.ttf */; };
+		F1285E452B19C30F00CCDCB9 /* IBMPlexSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3B2B19C30F00CCDCB9 /* IBMPlexSans-Thin.ttf */; };
+		F1285E462B19C30F00CCDCB9 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3C2B19C30F00CCDCB9 /* IBMPlexSans-Light.ttf */; };
+		F1285E472B19C30F00CCDCB9 /* IBMPlexSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3D2B19C30F00CCDCB9 /* IBMPlexSans-Italic.ttf */; };
+		F1285E482B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3E2B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf */; };
+		F1285E492B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1285E3F2B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf */; };
+		F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1285E162B18A4C000CCDCB9 /* QXTrading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QXTrading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1285E192B18A4C000CCDCB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1285E1B2B18A4C000CCDCB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1285E1D2B18A4C000CCDCB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1285E202B18A4C000CCDCB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1285E1D2B18A4C000CCDCB9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		F1285E222B18A4C100CCDCB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1285E252B18A4C100CCDCB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1285E272B18A4C100CCDCB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1285E362B19C30F00CCDCB9 /* IBMPlexSans-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Text.ttf"; sourceTree = "<group>"; };
+		F1285E372B19C30F00CCDCB9 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
+		F1285E382B19C30F00CCDCB9 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		F1285E392B19C30F00CCDCB9 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		F1285E3A2B19C30F00CCDCB9 /* IBMPlexSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F1285E3B2B19C30F00CCDCB9 /* IBMPlexSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Thin.ttf"; sourceTree = "<group>"; };
+		F1285E3C2B19C30F00CCDCB9 /* IBMPlexSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Light.ttf"; sourceTree = "<group>"; };
+		F1285E3D2B19C30F00CCDCB9 /* IBMPlexSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Italic.ttf"; sourceTree = "<group>"; };
+		F1285E3E2B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
+		F1285E3F2B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
+		F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1285E2F2B18A4D800CCDCB9 /* RswiftLibrary in Frameworks */,
+				F1285E312B18A4D800CCDCB9 /* rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +80,33 @@
 		F1285E182B18A4C000CCDCB9 /* QXTrading */ = {
 			isa = PBXGroup;
 			children = (
+				F1285E352B19C30F00CCDCB9 /* ibmplexsans */,
 				F1285E192B18A4C000CCDCB9 /* AppDelegate.swift */,
 				F1285E1B2B18A4C000CCDCB9 /* SceneDelegate.swift */,
-				F1285E1D2B18A4C000CCDCB9 /* ViewController.swift */,
-				F1285E1F2B18A4C000CCDCB9 /* Main.storyboard */,
+				F1285E1D2B18A4C000CCDCB9 /* OnboardingViewController.swift */,
+				F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
 				F1285E272B18A4C100CCDCB9 /* Info.plist */,
 			);
 			path = QXTrading;
+			sourceTree = "<group>";
+		};
+		F1285E352B19C30F00CCDCB9 /* ibmplexsans */ = {
+			isa = PBXGroup;
+			children = (
+				F1285E362B19C30F00CCDCB9 /* IBMPlexSans-Text.ttf */,
+				F1285E372B19C30F00CCDCB9 /* IBMPlexSans-Medium.ttf */,
+				F1285E382B19C30F00CCDCB9 /* IBMPlexSans-SemiBold.ttf */,
+				F1285E392B19C30F00CCDCB9 /* OFL.txt */,
+				F1285E3A2B19C30F00CCDCB9 /* IBMPlexSans-ExtraLight.ttf */,
+				F1285E3B2B19C30F00CCDCB9 /* IBMPlexSans-Thin.ttf */,
+				F1285E3C2B19C30F00CCDCB9 /* IBMPlexSans-Light.ttf */,
+				F1285E3D2B19C30F00CCDCB9 /* IBMPlexSans-Italic.ttf */,
+				F1285E3E2B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf */,
+				F1285E3F2B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf */,
+			);
+			path = ibmplexsans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,8 +123,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				F1285E332B18A52700CCDCB9 /* PBXTargetDependency */,
 			);
 			name = QXTrading;
+			packageProductDependencies = (
+				F1285E2E2B18A4D800CCDCB9 /* RswiftLibrary */,
+				F1285E302B18A4D800CCDCB9 /* rswift */,
+			);
 			productName = QXTrading;
 			productReference = F1285E162B18A4C000CCDCB9 /* QXTrading.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +158,9 @@
 				Base,
 			);
 			mainGroup = F1285E0D2B18A4BF00CCDCB9;
+			packageReferences = (
+				F1285E2D2B18A4D800CCDCB9 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = F1285E172B18A4C000CCDCB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +175,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1285E462B19C30F00CCDCB9 /* IBMPlexSans-Light.ttf in Resources */,
+				F1285E472B19C30F00CCDCB9 /* IBMPlexSans-Italic.ttf in Resources */,
+				F1285E432B19C30F00CCDCB9 /* OFL.txt in Resources */,
 				F1285E262B18A4C100CCDCB9 /* LaunchScreen.storyboard in Resources */,
 				F1285E232B18A4C100CCDCB9 /* Assets.xcassets in Resources */,
-				F1285E212B18A4C000CCDCB9 /* Main.storyboard in Resources */,
+				F1285E422B19C30F00CCDCB9 /* IBMPlexSans-SemiBold.ttf in Resources */,
+				F1285E442B19C30F00CCDCB9 /* IBMPlexSans-ExtraLight.ttf in Resources */,
+				F1285E412B19C30F00CCDCB9 /* IBMPlexSans-Medium.ttf in Resources */,
+				F1285E492B19C30F00CCDCB9 /* IBMPlexSans-Bold.ttf in Resources */,
+				F1285E452B19C30F00CCDCB9 /* IBMPlexSans-Thin.ttf in Resources */,
+				F1285E402B19C30F00CCDCB9 /* IBMPlexSans-Text.ttf in Resources */,
+				F1285E482B19C30F00CCDCB9 /* IBMPlexSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +197,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1285E1E2B18A4C000CCDCB9 /* ViewController.swift in Sources */,
+				F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
+				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		F1285E1F2B18A4C000CCDCB9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1285E202B18A4C000CCDCB9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		F1285E332B18A52700CCDCB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = F1285E322B18A52700CCDCB9 /* RswiftGenerateInternalResources */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +356,6 @@
 				INFOPLIST_FILE = QXTrading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +383,6 @@
 				INFOPLIST_FILE = QXTrading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +420,34 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1285E2D2B18A4D800CCDCB9 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1285E2E2B18A4D800CCDCB9 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1285E2D2B18A4D800CCDCB9 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		F1285E302B18A4D800CCDCB9 /* rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1285E2D2B18A4D800CCDCB9 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = rswift;
+		};
+		F1285E322B18A52700CCDCB9 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1285E0E2B18A4BF00CCDCB9 /* Project object */;
 }
