@@ -136,8 +136,21 @@ class OnboardingViewController: UIViewController {
     }
     
     private func constraintsSetup() {
+        if UIScreen.main.bounds.size.height >= 812 {
+            NSLayoutConstraint.activate([
+                onboImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+                onboButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -55),
+                accountTextField.bottomAnchor.constraint(equalTo: onboLabel.topAnchor, constant: -175),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                onboImage.topAnchor.constraint(equalTo: view.topAnchor),
+                onboButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                accountTextField.bottomAnchor.constraint(equalTo: onboLabel.topAnchor, constant: -115),
+            ])
+        }
+        
         NSLayoutConstraint.activate([
-            onboImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
             onboImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             onboImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
@@ -152,7 +165,6 @@ class OnboardingViewController: UIViewController {
             onboPageControll.bottomAnchor.constraint(equalTo: onboButton.topAnchor, constant: -30),
             onboPageControll.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            onboButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -55),
             onboButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             accountButton.bottomAnchor.constraint(equalTo: accountTextField.topAnchor, constant: -32),
@@ -160,7 +172,6 @@ class OnboardingViewController: UIViewController {
             
             accountTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             accountTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            accountTextField.bottomAnchor.constraint(equalTo: onboLabel.topAnchor, constant: -175),
             accountTextField.heightAnchor.constraint(equalToConstant: 63),
         ])
     }
