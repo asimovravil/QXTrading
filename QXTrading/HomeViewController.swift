@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.addSubview(borderBottom)
         
         NSLayoutConstraint.activate([
-            borderBottom.leadingAnchor.constraint(equalTo: navigationController!.navigationBar.leadingAnchor),
+            borderBottom.leadingAnchor.constraint(equalTo: (navigationController!.navigationBar.leadingAnchor)),
             borderBottom.trailingAnchor.constraint(equalTo: navigationController!.navigationBar.trailingAnchor),
             borderBottom.bottomAnchor.constraint(equalTo: navigationController!.navigationBar.bottomAnchor),
             borderBottom.heightAnchor.constraint(equalToConstant: 1)
