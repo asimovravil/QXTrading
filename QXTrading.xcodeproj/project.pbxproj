@@ -34,6 +34,7 @@
 		F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */; };
 		F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */; };
 		F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */; };
+		F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCategoryViewController.swift; sourceTree = "<group>"; };
 		F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
 		F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */,
 				F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */,
 				F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */,
+				F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */,
 				F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
@@ -228,6 +231,7 @@
 				F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */,
 				F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
+				F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
 				F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */,
