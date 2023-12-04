@@ -159,6 +159,24 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let username = UserDefaults.standard.string(forKey: "username"), !username.isEmpty {
+            labelAccount.text = username
+        } else {
+            labelAccount.text = "Unknown"
+        }
+
+        if let imageData = UserDefaults.standard.data(forKey: "userProfileImage"),
+           let image = UIImage(data: imageData) {
+            imageAccount.image = image
+        } else {
+            imageAccount.image = R.image.accountImageCard() 
+        }
+    }
+
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

@@ -17,9 +17,9 @@ class TabBarViewController: UITabBarController {
         
     private func addedTabBarSetup() {
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
-        let profileViewController = UINavigationController(rootViewController: SettingsViewController())
+        let profileViewController = UINavigationController(rootViewController: ProfileViewController())
         
-        tabBar.backgroundColor = UIColor(red: 30/255.0, green: 27/255.0, blue: 27/255.0, alpha: 1)
+        tabBar.backgroundColor = R.color.tabbarBackground()
         tabBar.tintColor = R.color.tabBarTint()
         tabBar.unselectedItemTintColor = .white
         

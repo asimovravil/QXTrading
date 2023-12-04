@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "delbutton.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
