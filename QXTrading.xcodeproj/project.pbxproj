@@ -32,6 +32,7 @@
 		F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */; };
 		F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */; };
 		F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */; };
+		F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCategoryViewController.swift; sourceTree = "<group>"; };
+		F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */,
 				F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */,
+				F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
 				F1285E272B18A4C100CCDCB9 /* Info.plist */,
@@ -224,6 +227,7 @@
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
+				F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */,
 				F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */,
 				F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */,
 				F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */,

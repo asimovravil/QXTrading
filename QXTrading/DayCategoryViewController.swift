@@ -101,6 +101,8 @@ class DayCategoryViewController: UIViewController {
         constraintsSetup()
         navigationBarSetup()
         
+        category3.addTarget(self, action: #selector(glossaryMetod), for: .touchUpInside)
+        
         circleCategory1.addTarget(self, action: #selector(updateCircle1), for: .touchUpInside)
         circleCategory2.addTarget(self, action: #selector(updateCircle2), for: .touchUpInside)
         circleCategory3.addTarget(self, action: #selector(updateCircle3), for: .touchUpInside)
@@ -129,6 +131,8 @@ class DayCategoryViewController: UIViewController {
     }
     
     private func navigationBarSetup() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         let settingsButton = UIBarButtonItem(image: R.image.settingsBar(), style: .plain, target: self, action: #selector(settingsButtonTapped))
         settingsButton.tintColor = .white
         navigationItem.leftBarButtonItems = [] 
@@ -166,7 +170,6 @@ class DayCategoryViewController: UIViewController {
         }
     }
 
-    
     @objc private func settingsButtonTapped() {
         let settingsVC = UINavigationController(rootViewController: SettingsViewController())
         self.present(settingsVC, animated: true, completion: nil)
@@ -200,5 +203,10 @@ class DayCategoryViewController: UIViewController {
     
     @objc func updateCircle3() {
         isCircle3Success.toggle()
+    }
+    
+    @objc func glossaryMetod() {
+        let controller = GlossaryViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
