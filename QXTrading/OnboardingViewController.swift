@@ -139,14 +139,27 @@ class OnboardingViewController: UIViewController {
         }
     }
     
-    
     @objc func onboButtonNext() {
         if onboCurrentPage < onbo.count - 1 {
             onboCurrentPage += 1
         } else {
-            print("good")
+            if let username = accountTextField.text {
+                UserDefaults.standard.set(username, forKey: "username")
+            }
+            if let profileImage = accountButton.image(for: .normal) {
+                if let imageData = profileImage.jpegData(compressionQuality: 1.0) {
+                    UserDefaults.standard.set(imageData, forKey: "userProfileImage")
+                }
+            }
+            
+            let tabBarVC = TabBarViewController()
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = tabBarVC
+                window.makeKeyAndVisible()
+                UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            }
         }
-        
         updateOnbo(onboCurrentPage)
         onboPageControll.currentPage = onboCurrentPage
     }

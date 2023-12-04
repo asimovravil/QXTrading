@@ -140,6 +140,15 @@ class HomeViewController: UIViewController {
         navigationBarSetup()
         updateProgress(currentDay: currentDay, totalDays: 30)
         
+        if let username = UserDefaults.standard.string(forKey: "username") {
+            labelAccount.text = username
+        }
+
+        if let imageData = UserDefaults.standard.data(forKey: "userProfileImage"),
+           let image = UIImage(data: imageData) {
+            imageAccount.image = image
+        }
+        
         if let savedTimes = UserDefaults.standard.array(forKey: "cellTimes") as? [Int], savedTimes.count == 30 {
             cellTimes = savedTimes
         } else {
@@ -198,6 +207,8 @@ class HomeViewController: UIViewController {
             
             imageAccount.topAnchor.constraint(equalTo: cardAccount.topAnchor, constant: 12),
             imageAccount.leadingAnchor.constraint(equalTo: cardAccount.leadingAnchor, constant: 16),
+            imageAccount.heightAnchor.constraint(equalToConstant: 60),
+            imageAccount.widthAnchor.constraint(equalToConstant: 60),
             
             labelAccount.centerYAnchor.constraint(equalTo: imageAccount.centerYAnchor),
             labelAccount.leadingAnchor.constraint(equalTo: imageAccount.trailingAnchor, constant: 16),
