@@ -29,6 +29,7 @@
 		F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E552B1B238400CCDCB9 /* TabBarViewController.swift */; };
 		F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */; };
 		F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */; };
+		F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F1285E552B1B238400CCDCB9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCell.swift; sourceTree = "<group>"; };
+		F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */,
 				F1285E522B19D91000CCDCB9 /* HomeViewController.swift */,
 				F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */,
+				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
 				F1285E272B18A4C100CCDCB9 /* Info.plist */,
@@ -217,6 +220,7 @@
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
 				F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */,
 				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
+				F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

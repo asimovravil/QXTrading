@@ -16,8 +16,8 @@ class TabBarViewController: UITabBarController {
     }
         
     private func addedTabBarSetup() {
-        let homeViewController = OnboardingViewController()
-        let profileViewController = UINavigationController(rootViewController: HomeViewController())
+        let homeViewController = UINavigationController(rootViewController: HomeViewController())
+        let profileViewController = UINavigationController(rootViewController: SettingsViewController())
         
         tabBar.backgroundColor = UIColor(red: 30/255.0, green: 27/255.0, blue: 27/255.0, alpha: 1)
         tabBar.tintColor = R.color.tabBarTint()
