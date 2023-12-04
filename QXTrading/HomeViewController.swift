@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
         view.addSubview(labelStudy)
         view.addSubview(tableView)
         cardAccount.addSubview(circularProgressBar)
-        view.backgroundColor = .black
+        view.backgroundColor = R.color.background()
         constraintsSetup()
         navigationBarSetup()
         updateProgress(currentDay: currentDay, totalDays: 30)
@@ -234,7 +234,7 @@ class HomeViewController: UIViewController {
     
     private func navigationBarSetup() {
         let imageView = UIImageView(image: R.image.quotex())
-        let settingsButton = UIBarButtonItem(image: R.image.settingsBar(), style: .plain, target: nil, action: nil)
+        let settingsButton = UIBarButtonItem(image: R.image.settingsBar(), style: .plain, target: self, action: #selector(settingsButtonTapped))
         settingsButton.tintColor = .white
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: imageView), flexibleSpace]
@@ -243,7 +243,7 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.backgroundColor = .black
+        navBarAppearance.backgroundColor = R.color.background()
         
         let borderBottom = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 1))
         borderBottom.backgroundColor = R.color.colorShadowBottomNavBar()
@@ -265,7 +265,11 @@ class HomeViewController: UIViewController {
             navigationBar.scrollEdgeAppearance = navBarAppearance
         }
     }
-
+    
+    @objc private func settingsButtonTapped() {
+        let settingsVC = UINavigationController(rootViewController: SettingsViewController()) 
+        self.present(settingsVC, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {

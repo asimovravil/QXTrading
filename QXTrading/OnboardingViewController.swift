@@ -85,7 +85,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
+        view.backgroundColor = R.color.background()
         view.addSubview(onboImage)
         view.addSubview(onboLabel)
         view.addSubview(onboSubLabel)
