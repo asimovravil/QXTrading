@@ -233,6 +233,8 @@ class HomeViewController: UIViewController {
     }
     
     private func navigationBarSetup() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         let imageView = UIImageView(image: R.image.quotex())
         let settingsButton = UIBarButtonItem(image: R.image.settingsBar(), style: .plain, target: self, action: #selector(settingsButtonTapped))
         settingsButton.tintColor = .white
@@ -286,8 +288,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let dayNumber = indexPath.row + 1
         if dayNumber >= 4 {
             cell.cellDayImage.image = UIImage(named: "dayClose\(dayNumber)")
+            cell.isUserInteractionEnabled = false
         } else {
             cell.cellDayImage.image = UIImage(named: "day\(dayNumber)")
+            cell.isUserInteractionEnabled = true
         }
         
         let time = cellTimes[indexPath.row]
@@ -299,6 +303,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let dayCategoryVC = DayCategoryViewController()
+        dayCategoryVC.selectedDay = indexPath.row + 1
+        navigationController?.pushViewController(dayCategoryVC, animated: true)
     }
 }
