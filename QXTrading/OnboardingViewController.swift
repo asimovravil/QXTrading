@@ -11,7 +11,7 @@ import Photos
 class OnboardingViewController: UIViewController {
     
     var onboCurrentPage = 0
-
+    
     private let onboImage: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
@@ -20,7 +20,7 @@ class OnboardingViewController: UIViewController {
         return imageView
     }()
     
-    var onboLabel: UILabel = {
+    private let onboLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .white
@@ -30,7 +30,7 @@ class OnboardingViewController: UIViewController {
         return label
     }()
     
-    var onboSubLabel: UILabel = {
+    private let onboSubLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .white
@@ -54,7 +54,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    
     private let accountButton: UIButton = {
         let button = UIButton()
         button.setImage(R.image.accountCamera(), for: .normal)
@@ -122,7 +122,7 @@ class OnboardingViewController: UIViewController {
         onboLabel.text = onboItem.textTitle
         onboSubLabel.text = onboItem.textSubTitle
         onboImage.image = UIImage(named: onboItem.imageName)
-
+        
         switch onboList {
         case onbo.count - 1:
             onboButton.setImage(R.image.createAccount(), for: .normal)
@@ -138,7 +138,7 @@ class OnboardingViewController: UIViewController {
             onboButton.isEnabled = accountTextField.text?.count ?? 0 >= 3
         }
     }
-
+    
     
     @objc func onboButtonNext() {
         if onboCurrentPage < onbo.count - 1 {
@@ -207,7 +207,7 @@ extension OnboardingViewController: UIImagePickerControllerDelegate, UINavigatio
             self.presentImagePicker()
         }
     }
-
+    
     func presentImagePicker() {
         DispatchQueue.main.async {
             let imagePicker = UIImagePickerController()
@@ -221,14 +221,14 @@ extension OnboardingViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             let resizedImage = resizeImage(image: selectedImage, targetSize: accountButton.bounds.size)
-
+            
             // Сохранение изображения
             saveImageToLocalStorage(resizedImage)
-
+            
             // Установка изображения на кнопку
             accountButton.setImage(resizedImage, for: .normal)
         }
-
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -240,20 +240,20 @@ extension OnboardingViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
-
+        
         let widthRatio  = targetSize.width  / size.width
         let heightRatio = targetSize.height / size.height
-
+        
         // Определяем "масштабный коэффициент" как минимум из двух отношений
         _ = min(widthRatio, heightRatio)
-
+        
         let scaledImageSize = CGSize(width: 140, height: 140)
-
+        
         let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
         let scaledImage = renderer.image { _ in
             image.draw(in: CGRect(origin: .zero, size: scaledImageSize))
         }
-
+        
         return scaledImage
     }
 }
