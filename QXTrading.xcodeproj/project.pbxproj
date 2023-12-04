@@ -28,6 +28,7 @@
 		F1285E532B19D91000CCDCB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E522B19D91000CCDCB9 /* HomeViewController.swift */; };
 		F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E552B1B238400CCDCB9 /* TabBarViewController.swift */; };
 		F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */; };
+		F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F1285E522B19D91000CCDCB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1285E552B1B238400CCDCB9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,9 @@
 				F1285E1D2B18A4C000CCDCB9 /* OnboardingViewController.swift */,
 				F1285E4B2B19C3D800CCDCB9 /* OnboList.swift */,
 				F1285E552B1B238400CCDCB9 /* TabBarViewController.swift */,
-				F1285E522B19D91000CCDCB9 /* HomeViewController.swift */,
 				F1285E592B1D9EBC00CCDCB9 /* CircularProgressBar.swift */,
+				F1285E522B19D91000CCDCB9 /* HomeViewController.swift */,
+				F1285E5C2B1DA3B200CCDCB9 /* DaysCell.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
 				F1285E272B18A4C100CCDCB9 /* Info.plist */,
@@ -208,6 +211,7 @@
 			files = (
 				F1285E532B19D91000CCDCB9 /* HomeViewController.swift in Sources */,
 				F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */,
+				F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,

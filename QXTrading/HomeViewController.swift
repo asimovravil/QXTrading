@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var cellTimes: [Int] = []
+    
     private let cardAccount: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = R.color.colorTextField()
@@ -92,6 +94,30 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    private let labelStudy: UILabel = {
+        let label = UILabel()
+        label.text = "Study"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = R.font.ibmPlexSansMedium(size: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(DaysCell.self, forCellReuseIdentifier: DaysCell.reuseID)
+        tableView.layer.cornerRadius = 26
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = 80
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,11 +132,22 @@ class HomeViewController: UIViewController {
         view.addSubview(subLabelResult)
         view.addSubview(circularLabel)
         view.addSubview(circularDaysLabel)
+        view.addSubview(labelStudy)
+        view.addSubview(tableView)
         cardAccount.addSubview(circularProgressBar)
         view.backgroundColor = .black
         constraintsSetup()
         navigationBarSetup()
         updateProgress(currentDay: currentDay, totalDays: 30)
+        
+        if let savedTimes = UserDefaults.standard.array(forKey: "cellTimes") as? [Int], savedTimes.count == 30 {
+            cellTimes = savedTimes
+        } else {
+            for _ in 1...30 {
+                cellTimes.append(Int.random(in: 10...30))
+            }
+            UserDefaults.standard.set(cellTimes, forKey: "cellTimes")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -144,8 +181,17 @@ class HomeViewController: UIViewController {
     }
     
     private func constraintsSetup() {
+        if UIScreen.main.bounds.size.height >= 812 {
+            NSLayoutConstraint.activate([
+                cardAccount.topAnchor.constraint(equalTo: view.topAnchor, constant: 131),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                cardAccount.topAnchor.constraint(equalTo: view.topAnchor, constant: 91),
+            ])
+        }
+        
         NSLayoutConstraint.activate([
-            cardAccount.topAnchor.constraint(equalTo: view.topAnchor, constant: 131),
             cardAccount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             cardAccount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             cardAccount.heightAnchor.constraint(equalToConstant: 178),
@@ -175,6 +221,14 @@ class HomeViewController: UIViewController {
             
             circularDaysLabel.topAnchor.constraint(equalTo: circularLabel.bottomAnchor),
             circularDaysLabel.centerXAnchor.constraint(equalTo: circularProgressBar.centerXAnchor),
+            
+            labelStudy.topAnchor.constraint(equalTo: cardAccount.bottomAnchor, constant: 24),
+            labelStudy.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            
+            tableView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
     
@@ -208,5 +262,36 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.compactAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+    }
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DaysCell.reuseID, for: indexPath) as? DaysCell else {
+            fatalError("Could not cast to DaysCell")
+        }
+        
+        let dayNumber = indexPath.row + 1
+        if dayNumber >= 4 {
+            cell.cellDayImage.image = UIImage(named: "dayClose\(dayNumber)")
+        } else {
+            cell.cellDayImage.image = UIImage(named: "day\(dayNumber)")
+        }
+        
+        let time = cellTimes[indexPath.row]
+        cell.cellLabelTime.text = "\(time) min"
+        
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
