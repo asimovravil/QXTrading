@@ -9,6 +9,8 @@ import UIKit
 
 final class QuizTestViewController: UIViewController {
     
+    private var questionResults = [Bool]()
+    
     var onQuizCompletion: ((Int, Int) -> Void)?
     private var totalQuestions = 0
     private var userCorrectAnswers = 0
@@ -53,6 +55,7 @@ final class QuizTestViewController: UIViewController {
         resultVC.modalPresentationStyle = .fullScreen
         resultVC.correctAnswers = userCorrectAnswers
         resultVC.totalQuestions = totalQuestions
+        resultVC.questionResults = questionResults // Передаем массив результатов
         present(resultVC, animated: true, completion: nil)
     }
     
@@ -131,10 +134,18 @@ extension QuizTestViewController: BinanceProtocolTest {
         self.totalQuestions = totalQuestions
         tableView.reloadData()
         
-        answeredQuestionsCount += 1
+        if answeredQuestionsCount == totalQuestions {
+            navigateToLeaderboard()
+        }
+    }
 
-        if answeredQuestionsCount == 5 {
+    func didCompleteQuestion(isCorrect: Bool) {
+        questionResults.append(isCorrect) 
+
+        answeredQuestionsCount += 1
+        if answeredQuestionsCount == totalQuestions {
             navigateToLeaderboard()
         }
     }
 }
+

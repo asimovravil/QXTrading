@@ -9,8 +9,8 @@ import UIKit
 
 protocol BinanceProtocolTest: AnyObject {
     func didAnswerQuestion(correctAnswers: Int, totalQuestions: Int)
+    func didCompleteQuestion(isCorrect: Bool) 
 }
-
 
 final class QuizTestTableViewCell: UITableViewCell {
     
@@ -194,6 +194,7 @@ final class QuizTestTableViewCell: UITableViewCell {
                 self.updateUI()
                 self.answerSelected = false
                 self.delegate?.didAnswerQuestion(correctAnswers: self.userCorrectAnswers, totalQuestions: self.totalQuestions)
+                self.delegate?.didCompleteQuestion(isCorrect: userGotItRight)
             }
         }
     }

@@ -9,6 +9,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var questionResults: [Bool] = []
+    
     var percentComplete = 0
     var correctAnswers: Int = 0
     var totalQuestions: Int = 0
@@ -195,21 +197,20 @@ class ResultViewController: UIViewController {
     }
     
     private func addArrowCorrectImageToTopImages() {
-        let arrowCorrectImage = UIImage(named: "arrowCorrect")
-        
         let topImageViews = [top1, top2, top3, top4, top5]
         
-        for imageView in topImageViews {
-            let arrowCorrectImageView = UIImageView(image: arrowCorrectImage)
-            arrowCorrectImageView.translatesAutoresizingMaskIntoConstraints = false
-            arrowCorrectImageView.contentMode = .scaleAspectFit
-            imageView.addSubview(arrowCorrectImageView)
+        for (index, imageView) in topImageViews.enumerated() {
+            let imageName = index < questionResults.count && questionResults[index] ? "arrowCorrect" : "arrowIncorrect"
+            let arrowImageView = UIImageView(image: UIImage(named: imageName))
+            arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+            arrowImageView.contentMode = .scaleAspectFit
+            imageView.addSubview(arrowImageView)
             
             NSLayoutConstraint.activate([
-                arrowCorrectImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -5),
-                arrowCorrectImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-                arrowCorrectImageView.widthAnchor.constraint(equalToConstant: 24),
-                arrowCorrectImageView.heightAnchor.constraint(equalToConstant: 24)
+                arrowImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -5),
+                arrowImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+                arrowImageView.widthAnchor.constraint(equalToConstant: 24),
+                arrowImageView.heightAnchor.constraint(equalToConstant: 24)
             ])
         }
     }
