@@ -9,9 +9,17 @@ import UIKit
 
 class IndicatorsViewController: UIViewController {
 
+    var indicator: Indicator?
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     private let titleIndicator: UILabel = {
         let label = UILabel()
-        label.text = "Bolinger Bands"
+        label.textAlignment = .center
         label.textColor = .white
         label.numberOfLines = 0
         label.font = R.font.ibmPlexSansMedium(size: 32)
@@ -21,7 +29,6 @@ class IndicatorsViewController: UIViewController {
     
     private let imageIndicator: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = R.image.graphics()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +37,6 @@ class IndicatorsViewController: UIViewController {
     
     private let descriptionIndicator: UILabel = {
         let label = UILabel()
-        label.text = "The Bollinger Bands indicator is a popular tool in technical analysis used to analyze price volatility and identify potential price reversal points. Developed by John Bollinger in the early 1980s, it consists of three bands – an upper band, a middle band, and a lower band. Here's how the Bollinger Bands work:"
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -42,25 +48,43 @@ class IndicatorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(titleIndicator)
-        view.addSubview(imageIndicator)
-        view.addSubview(descriptionIndicator)
+        view.addSubview(scrollView)
+        scrollView.addSubview(titleIndicator)
+        scrollView.addSubview(imageIndicator)
+        scrollView.addSubview(descriptionIndicator)
         view.backgroundColor = R.color.background()
         constraintsSetup()
         navigationBarSetup()
+        
+        if let indicator = indicator {
+            titleIndicator.text = indicator.titleInd
+             imageIndicator.image = UIImage(named: indicator.imageNameInd)
+             descriptionIndicator.text = indicator.descriptionInd
+        }
     }
     
     private func constraintsSetup() {
         NSLayoutConstraint.activate([
-            titleIndicator.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
-            titleIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
+            titleIndicator.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 24),
+            titleIndicator.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            titleIndicator.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+
             imageIndicator.topAnchor.constraint(equalTo: titleIndicator.bottomAnchor, constant: 16),
-            imageIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageIndicator.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            imageIndicator.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            imageIndicator.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32),
+            imageIndicator.heightAnchor.constraint(equalToConstant: 485),
 
             descriptionIndicator.topAnchor.constraint(equalTo: imageIndicator.bottomAnchor, constant: 16),
-            descriptionIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            descriptionIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            descriptionIndicator.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            descriptionIndicator.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            descriptionIndicator.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32), 
+            descriptionIndicator.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16)
         ])
     }
     

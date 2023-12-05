@@ -10,6 +10,8 @@ import StoreKit
 
 class DayCategoryViewController: UIViewController {
 
+    var selectedIndicatorIndex: Int = 0
+    
     var isCircle1Success: Bool = false {
         didSet {
             circleCategory1Metod()
@@ -101,6 +103,7 @@ class DayCategoryViewController: UIViewController {
         constraintsSetup()
         navigationBarSetup()
         
+        category1.addTarget(self, action: #selector(indicatorMetod), for: .touchUpInside)
         category3.addTarget(self, action: #selector(glossaryMetod), for: .touchUpInside)
         
         circleCategory1.addTarget(self, action: #selector(updateCircle1), for: .touchUpInside)
@@ -203,6 +206,14 @@ class DayCategoryViewController: UIViewController {
     
     @objc func updateCircle3() {
         isCircle3Success.toggle()
+    }
+    
+    @objc func indicatorMetod() {
+        let indicatorsVC = IndicatorsViewController()
+        let index = selectedIndicatorIndex 
+        let selectedIndicator = indicatorList[index]
+        indicatorsVC.indicator = selectedIndicator
+        self.navigationController?.pushViewController(indicatorsVC, animated: true)
     }
     
     @objc func glossaryMetod() {

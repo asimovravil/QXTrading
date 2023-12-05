@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     var cellTimes: [Int] = []
+    var selectedIndicatorIndex: Int = 0
     
     private let cardAccount: UIView = {
         let uiView = UIView()
@@ -334,6 +335,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dayCategoryVC = DayCategoryViewController()
         dayCategoryVC.selectedDay = indexPath.row + 1
+        dayCategoryVC.selectedIndicatorIndex = indexPath.row
         navigationController?.pushViewController(dayCategoryVC, animated: true)
     }
 }

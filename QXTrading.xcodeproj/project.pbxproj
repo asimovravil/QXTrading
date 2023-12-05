@@ -35,6 +35,7 @@
 		F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */; };
 		F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */; };
 		F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */; };
+		F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
 		F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsViewController.swift; sourceTree = "<group>"; };
+		F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */,
 				F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */,
 				F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */,
+				F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */,
 				F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
@@ -240,6 +243,7 @@
 				F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */,
 				F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */,
 				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
+				F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */,
 				F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
