@@ -213,27 +213,32 @@ class DayCategoryViewController: UIViewController {
     
     @objc func indicatorMetod() {
         let indicatorsVC = IndicatorsViewController()
-        let index = selectedIndicatorIndex 
+        let index = selectedIndicatorIndex
         let selectedIndicator = indicatorList[index]
         indicatorsVC.indicator = selectedIndicator
+        indicatorsVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(indicatorsVC, animated: true)
     }
-    
+
     @objc func patternMetod() {
         let patternVC = PatternsViewController()
         let index = selectedIndicatorIndex
         let selectedPattern = patternList[index]
         patternVC.pattern = selectedPattern
+        patternVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(patternVC, animated: true)
     }
-    
+
     @objc func glossaryMetod() {
         let controller = GlossaryViewController()
+        controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
+
     
     @objc func testMetod() {
         let quizVC = QuizTestViewController()
+        quizVC.hidesBottomBarWhenPushed = true 
         self.navigationController?.pushViewController(quizVC, animated: true)
     }
 }
