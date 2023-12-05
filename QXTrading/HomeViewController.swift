@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var correctAnswers: Int = 0
     var cellTimes: [Int] = []
     var selectedIndicatorIndex: Int = 0
     
@@ -119,7 +120,7 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
-    private let popWellDoneImage: UIImageView = {
+    public let popWellDoneImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = R.image.wellDone()
         imageView.layer.masksToBounds = true
@@ -129,17 +130,17 @@ class HomeViewController: UIViewController {
         return imageView
     }()
     
-    private let popPassTheTestImage: UIImageView = {
+    public let popPassTheTestImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = R.image.passTheTest()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.isHidden = false
+        imageView.isHidden = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let popWellDoneButton: UIButton = {
+    public let popWellDoneButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Okay", for: .normal)
         button.titleLabel?.textColor = .blue
@@ -149,22 +150,22 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    private let remindLaterButton: UIButton = {
+    public let remindLaterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Remind later", for: .normal)
         button.titleLabel?.textColor = .blue
         button.titleLabel?.font = R.font.ibmPlexSans(size: 17)
-        button.isHidden = false
+        button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private let startTestButton: UIButton = {
+    public let startTestButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Start test", for: .normal)
         button.titleLabel?.textColor = .blue
         button.titleLabel?.font = R.font.ibmPlexSansSemiBold(size: 17)
-        button.isHidden = false
+        button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -254,6 +255,7 @@ class HomeViewController: UIViewController {
     
     @objc func startTestButtonMetod() {
         let startTestVC = QuizTestViewController()
+        startTestVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(startTestVC, animated: true)
     }
     

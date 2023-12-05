@@ -25,7 +25,7 @@ class ResultViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private let circularProgressBar: CircularProgressBar = {
         let progressBar = CircularProgressBar(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         progressBar.lineWidth = 15
@@ -149,7 +149,7 @@ class ResultViewController: UIViewController {
         stackView.addArrangedSubview(top5)
         
         homeButton.addTarget(self, action: #selector(homeButtonMetod), for: .touchUpInside)
-
+        
         constraintsSetup()
         addArrowCorrectImageToTopImages()
         
@@ -165,7 +165,7 @@ class ResultViewController: UIViewController {
         circularAmountLabel.text = "\(correctAnswers)/\(totalQuestions)"
         circularProgressBar.setProgressWithAnimation(duration: 1, value: percentage)
     }
-
+    
     
     private func constraintsSetup() {
         NSLayoutConstraint.activate([
@@ -217,11 +217,43 @@ class ResultViewController: UIViewController {
     
     @objc func homeButtonMetod() {
         let tabBarVC = TabBarViewController()
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = windowScene.windows.first {
+        
+        // Retrieve the UINavigationController and then get HomeViewController
+        if let navigationController = tabBarVC.viewControllers?.first as? UINavigationController,
+           let homeVC = navigationController.viewControllers.first as? HomeViewController {
+            
+            homeVC.correctAnswers = correctAnswers
+            
+            // Use UIWindowScene to get the window
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
+                print("Error: Key Window not found")
+                return
+            }
+            
             window.rootViewController = tabBarVC
             window.makeKeyAndVisible()
-            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                // Update UI based on correctAnswers
+                if homeVC.correctAnswers > 3 {
+                    homeVC.popWellDoneImage.isHidden = false
+                    homeVC.popWellDoneButton.isHidden = false
+                    homeVC.popPassTheTestImage.isHidden = true
+                    homeVC.remindLaterButton.isHidden = true
+                    homeVC.startTestButton.isHidden = true
+                } else {
+                    homeVC.popWellDoneImage.isHidden = true
+                    homeVC.popWellDoneButton.isHidden = true
+                    homeVC.popPassTheTestImage.isHidden = false
+                    homeVC.remindLaterButton.isHidden = false
+                    homeVC.startTestButton.isHidden = false
+                }
+            })
+        } else {
+            print("Error: HomeViewController not found")
         }
     }
+    
 }
+
