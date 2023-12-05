@@ -139,7 +139,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = R.color.background()
         constraintsSetup()
         navigationBarSetup()
-        updateProgress(currentDay: currentDay, totalDays: 30)
+        updateProgress(currentDay: 1)
         
         if let username = UserDefaults.standard.string(forKey: "username") {
             labelAccount.text = username
@@ -203,9 +203,9 @@ class HomeViewController: UIViewController {
         return attributedText
     }
     
-    func updateProgress(currentDay: Int, totalDays: Int) {
-        circularProgressBar.setProgressWithAnimation(duration: 1, currentDay: currentDay, totalDays: totalDays)
-        circularLabel.attributedText = formattedText(currentDay: currentDay, totalDays: totalDays)
+    func updateProgress(currentDay: Int, totalDays: Int = 30) {
+        circularProgressBar.progressBarMode = .dayBased(totalDays: totalDays)
+        circularProgressBar.setProgressWithAnimation(duration: 1, value: currentDay)
     }
     
     private func constraintsSetup() {

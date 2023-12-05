@@ -9,6 +9,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var percentComplete = 0
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Test Result"
@@ -146,6 +148,9 @@ class ResultViewController: UIViewController {
 
         constraintsSetup()
         addArrowCorrectImageToTopImages()
+        
+        circularProgressBar.progressBarMode = .percentageBased
+        circularProgressBar.setProgressWithAnimation(duration: 1, value: percentComplete)
     }
     
     private func constraintsSetup() {

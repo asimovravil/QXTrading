@@ -7,9 +7,16 @@
 
 import UIKit
 
+enum ProgressBarMode {
+    case dayBased(totalDays: Int)
+    case percentageBased
+}
+
 class CircularProgressBar: UIView {
     private var progressLayer = CAShapeLayer()
     private var trackLayer = CAShapeLayer()
+    
+    var progressBarMode: ProgressBarMode = .dayBased(totalDays: 30)
     
     var lineWidth: CGFloat = 7.0 {
         didSet {
@@ -47,8 +54,16 @@ class CircularProgressBar: UIView {
         layer.addSublayer(progressLayer)
     }
     
-    func setProgressWithAnimation(duration: TimeInterval, currentDay: Int, totalDays: Int) {
-        let progress = Float(currentDay) / Float(totalDays)
+    func setProgressWithAnimation(duration: TimeInterval, value: Int) {
+        var progress: Float = 0.0
+        
+        switch progressBarMode {
+        case .dayBased(let totalDays):
+            progress = Float(value) / Float(totalDays)
+        case .percentageBased:
+            progress = Float(value) / 100.0
+        }
+        
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = duration
         animation.fromValue = progressLayer.strokeEnd
