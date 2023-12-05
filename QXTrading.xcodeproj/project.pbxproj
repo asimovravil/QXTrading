@@ -44,6 +44,7 @@
 		F1285E812B1ED61600CCDCB9 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */; };
 		F1285E862B1EDF8100CCDCB9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */; };
 		F1285E992B1F42B900CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */; };
+		F1285E9B2B1F48F200CCDCB9 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 		F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */,
 				F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */,
 				F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */,
+				F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* EditProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
 				F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */,
+				F1285E9B2B1F48F200CCDCB9 /* AchievementsViewController.swift in Sources */,
 				F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */,
 				F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */,
 				F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */,
