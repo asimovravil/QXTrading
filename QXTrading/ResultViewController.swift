@@ -8,6 +8,17 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Test Result"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = R.font.ibmPlexSans(size: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private let circularProgressBar: CircularProgressBar = {
         let progressBar = CircularProgressBar(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
@@ -115,6 +126,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = R.color.background()
+        view.addSubview(titleLabel)
         view.addSubview(circularProgressBar)
         view.addSubview(circularPercent)
         view.addSubview(circularAmountLabel)
@@ -138,7 +150,10 @@ class ResultViewController: UIViewController {
     
     private func constraintsSetup() {
         NSLayoutConstraint.activate([
-            circularProgressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            circularProgressBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 83),
             circularProgressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             circularProgressBar.widthAnchor.constraint(equalToConstant: 250),
             circularProgressBar.heightAnchor.constraint(equalToConstant: 250),
