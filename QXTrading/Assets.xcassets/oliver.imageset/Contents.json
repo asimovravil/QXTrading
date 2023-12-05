@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "oliver.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
