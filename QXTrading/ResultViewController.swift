@@ -133,6 +133,7 @@ class ResultViewController: UIViewController {
         homeButton.addTarget(self, action: #selector(homeButtonMetod), for: .touchUpInside)
 
         constraintsSetup()
+        addArrowCorrectImageToTopImages()
     }
     
     private func constraintsSetup() {
@@ -159,6 +160,26 @@ class ResultViewController: UIViewController {
             homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -72),
             homeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
+    }
+    
+    private func addArrowCorrectImageToTopImages() {
+        let arrowCorrectImage = UIImage(named: "arrowCorrect")
+        
+        let topImageViews = [top1, top2, top3, top4, top5]
+        
+        for imageView in topImageViews {
+            let arrowCorrectImageView = UIImageView(image: arrowCorrectImage)
+            arrowCorrectImageView.translatesAutoresizingMaskIntoConstraints = false
+            arrowCorrectImageView.contentMode = .scaleAspectFit
+            imageView.addSubview(arrowCorrectImageView)
+            
+            NSLayoutConstraint.activate([
+                arrowCorrectImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -5),
+                arrowCorrectImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+                arrowCorrectImageView.widthAnchor.constraint(equalToConstant: 24),
+                arrowCorrectImageView.heightAnchor.constraint(equalToConstant: 24)
+            ])
+        }
     }
     
     @objc func homeButtonMetod() {
