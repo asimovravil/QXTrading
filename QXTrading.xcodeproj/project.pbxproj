@@ -38,6 +38,10 @@
 		F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */; };
 		F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */; };
 		F1285E792B1ED1C900CCDCB9 /* Patterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E782B1ED1C900CCDCB9 /* Patterns.swift */; };
+		F1285E7E2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7A2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift */; };
+		F1285E7F2B1ED61600CCDCB9 /* QuizTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7B2B1ED61600CCDCB9 /* QuizTestViewController.swift */; };
+		F1285E802B1ED61600CCDCB9 /* GraphicsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */; };
+		F1285E812B1ED61600CCDCB9 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
 		F1285E782B1ED1C900CCDCB9 /* Patterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patterns.swift; sourceTree = "<group>"; };
+		F1285E7A2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTestTableViewCell.swift; sourceTree = "<group>"; };
+		F1285E7B2B1ED61600CCDCB9 /* QuizTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTestViewController.swift; sourceTree = "<group>"; };
+		F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsQuiz.swift; sourceTree = "<group>"; };
+		F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,10 @@
 				F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */,
 				F1285E782B1ED1C900CCDCB9 /* Patterns.swift */,
 				F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */,
+				F1285E7B2B1ED61600CCDCB9 /* QuizTestViewController.swift */,
+				F1285E7A2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift */,
+				F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */,
+				F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
@@ -237,11 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1285E532B19D91000CCDCB9 /* HomeViewController.swift in Sources */,
+				F1285E812B1ED61600CCDCB9 /* Graphics.swift in Sources */,
 				F1285E1E2B18A4C000CCDCB9 /* OnboardingViewController.swift in Sources */,
 				F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
+				F1285E802B1ED61600CCDCB9 /* GraphicsQuiz.swift in Sources */,
 				F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */,
 				F1285E792B1ED1C900CCDCB9 /* Patterns.swift in Sources */,
+				F1285E7E2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
 				F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */,
@@ -252,6 +267,7 @@
 				F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */,
 				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
 				F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */,
+				F1285E7F2B1ED61600CCDCB9 /* QuizTestViewController.swift in Sources */,
 				F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

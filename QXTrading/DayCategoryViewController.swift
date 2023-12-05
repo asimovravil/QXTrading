@@ -107,6 +107,7 @@ class DayCategoryViewController: UIViewController {
         category1.addTarget(self, action: #selector(indicatorMetod), for: .touchUpInside)
         category2.addTarget(self, action: #selector(patternMetod), for: .touchUpInside)
         category3.addTarget(self, action: #selector(glossaryMetod), for: .touchUpInside)
+        category4.addTarget(self, action: #selector(testMetod), for: .touchUpInside)
         
         circleCategory1.addTarget(self, action: #selector(updateCircle1), for: .touchUpInside)
         circleCategory2.addTarget(self, action: #selector(updateCircle2), for: .touchUpInside)
@@ -229,5 +230,10 @@ class DayCategoryViewController: UIViewController {
     @objc func glossaryMetod() {
         let controller = GlossaryViewController()
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func testMetod() {
+        let quizVC = QuizTestViewController()
+        self.navigationController?.pushViewController(quizVC, animated: true)
     }
 }
