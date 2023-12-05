@@ -45,6 +45,7 @@
 		F1285E862B1EDF8100CCDCB9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */; };
 		F1285E992B1F42B900CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */; };
 		F1285E9B2B1F48F200CCDCB9 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */; };
+		F1285E9E2B1F4C5700CCDCB9 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E9D2B1F4C5700CCDCB9 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		F1285E9D2B1F4C5700CCDCB9 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */,
 				F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */,
 				F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */,
+				F1285E9D2B1F4C5700CCDCB9 /* StatsViewController.swift */,
 				F1285E9A2B1F48F200CCDCB9 /* AchievementsViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* EditProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
@@ -275,6 +278,7 @@
 				F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */,
 				F1285E992B1F42B900CCDCB9 /* ProfileViewController.swift in Sources */,
 				F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */,
+				F1285E9E2B1F4C5700CCDCB9 /* StatsViewController.swift in Sources */,
 				F1285E6E2B1DF3E200CCDCB9 /* EditProfileViewController.swift in Sources */,
 				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
 				F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */,

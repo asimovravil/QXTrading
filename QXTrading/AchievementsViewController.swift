@@ -44,7 +44,7 @@ class AchievementsViewController: UIViewController {
             imageAchivies.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             imageAchivies.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
             imageAchivies.heightAnchor.constraint(equalToConstant: 524),
-            imageAchivies.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -24) 
+            imageAchivies.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -24)
         ])
     }
 }
