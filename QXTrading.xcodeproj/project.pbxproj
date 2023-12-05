@@ -42,6 +42,7 @@
 		F1285E7F2B1ED61600CCDCB9 /* QuizTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7B2B1ED61600CCDCB9 /* QuizTestViewController.swift */; };
 		F1285E802B1ED61600CCDCB9 /* GraphicsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */; };
 		F1285E812B1ED61600CCDCB9 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */; };
+		F1285E862B1EDF8100CCDCB9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		F1285E7B2B1ED61600CCDCB9 /* QuizTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTestViewController.swift; sourceTree = "<group>"; };
 		F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsQuiz.swift; sourceTree = "<group>"; };
 		F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
+		F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				F1285E7A2B1ED61600CCDCB9 /* QuizTestTableViewCell.swift */,
 				F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */,
 				F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */,
+				F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 				F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */,
 				F1285E7F2B1ED61600CCDCB9 /* QuizTestViewController.swift in Sources */,
 				F1285E612B1DBB0300CCDCB9 /* SettingsViewController.swift in Sources */,
+				F1285E862B1EDF8100CCDCB9 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

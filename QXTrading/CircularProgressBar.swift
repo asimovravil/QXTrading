@@ -11,6 +11,13 @@ class CircularProgressBar: UIView {
     private var progressLayer = CAShapeLayer()
     private var trackLayer = CAShapeLayer()
     
+    var lineWidth: CGFloat = 7.0 {
+        didSet {
+            trackLayer.lineWidth = lineWidth
+            progressLayer.lineWidth = lineWidth
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createCircularPath()
@@ -28,14 +35,14 @@ class CircularProgressBar: UIView {
         trackLayer.path = circlePath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.strokeColor = R.color.circular()?.cgColor
-        trackLayer.lineWidth = 7.0
+        trackLayer.lineWidth = lineWidth
         trackLayer.strokeEnd = 1.0
         layer.addSublayer(trackLayer)
         
         progressLayer.path = circlePath.cgPath
         progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.strokeColor = R.color.tabBarTint()?.cgColor
-        progressLayer.lineWidth = 7.0
+        progressLayer.lineWidth = lineWidth
         progressLayer.strokeEnd = 0.0
         layer.addSublayer(progressLayer)
     }
@@ -50,5 +57,4 @@ class CircularProgressBar: UIView {
         progressLayer.strokeEnd = CGFloat(progress)
         progressLayer.add(animation, forKey: "animateprogress")
     }
-
 }
