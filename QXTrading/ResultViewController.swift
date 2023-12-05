@@ -168,8 +168,19 @@ class ResultViewController: UIViewController {
     
     
     private func constraintsSetup() {
+        if UIScreen.main.bounds.size.height >= 812 {
+            NSLayoutConstraint.activate([
+                titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+                homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -72),
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+                homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
+        }
+        
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             circularProgressBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 83),
@@ -191,7 +202,6 @@ class ResultViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -72),
             homeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }

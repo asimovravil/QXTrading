@@ -242,8 +242,19 @@ class ProfileViewController: UIViewController, UIPageViewControllerDataSource, U
     }
     
     private func constraintsSetup() {
+        if UIScreen.main.bounds.size.height >= 812 {
+            NSLayoutConstraint.activate([
+                profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+
+            ])
+        }
+        
         NSLayoutConstraint.activate([
-            profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             profileImage.heightAnchor.constraint(equalToConstant: 60),
             profileImage.widthAnchor.constraint(equalToConstant: 60),
             profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
