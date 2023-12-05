@@ -36,6 +36,8 @@
 		F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */; };
 		F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */; };
 		F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */; };
+		F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */; };
+		F1285E792B1ED1C900CCDCB9 /* Patterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E782B1ED1C900CCDCB9 /* Patterns.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsViewController.swift; sourceTree = "<group>"; };
 		F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
+		F1285E782B1ED1C900CCDCB9 /* Patterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patterns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */,
 				F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */,
 				F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */,
+				F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */,
+				F1285E782B1ED1C900CCDCB9 /* Patterns.swift */,
 				F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */,
 				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
@@ -235,8 +241,10 @@
 				F1285E5D2B1DA3B200CCDCB9 /* DaysCell.swift in Sources */,
 				F1285E1A2B18A4C000CCDCB9 /* AppDelegate.swift in Sources */,
 				F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */,
+				F1285E792B1ED1C900CCDCB9 /* Patterns.swift in Sources */,
 				F1285E1C2B18A4C000CCDCB9 /* SceneDelegate.swift in Sources */,
 				F1285E5A2B1D9EBC00CCDCB9 /* CircularProgressBar.swift in Sources */,
+				F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */,
 				F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */,
 				F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */,
 				F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */,

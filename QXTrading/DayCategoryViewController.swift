@@ -11,6 +11,7 @@ import StoreKit
 class DayCategoryViewController: UIViewController {
 
     var selectedIndicatorIndex: Int = 0
+    var selectedPatternIndex: Int = 0
     
     var isCircle1Success: Bool = false {
         didSet {
@@ -104,6 +105,7 @@ class DayCategoryViewController: UIViewController {
         navigationBarSetup()
         
         category1.addTarget(self, action: #selector(indicatorMetod), for: .touchUpInside)
+        category2.addTarget(self, action: #selector(patternMetod), for: .touchUpInside)
         category3.addTarget(self, action: #selector(glossaryMetod), for: .touchUpInside)
         
         circleCategory1.addTarget(self, action: #selector(updateCircle1), for: .touchUpInside)
@@ -214,6 +216,14 @@ class DayCategoryViewController: UIViewController {
         let selectedIndicator = indicatorList[index]
         indicatorsVC.indicator = selectedIndicator
         self.navigationController?.pushViewController(indicatorsVC, animated: true)
+    }
+    
+    @objc func patternMetod() {
+        let patternVC = PatternsViewController()
+        let index = selectedIndicatorIndex
+        let selectedPattern = patternList[index]
+        patternVC.pattern = selectedPattern
+        self.navigationController?.pushViewController(patternVC, animated: true)
     }
     
     @objc func glossaryMetod() {

@@ -336,6 +336,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let dayCategoryVC = DayCategoryViewController()
         dayCategoryVC.selectedDay = indexPath.row + 1
         dayCategoryVC.selectedIndicatorIndex = indexPath.row
+        dayCategoryVC.selectedPatternIndex = indexPath.row
         navigationController?.pushViewController(dayCategoryVC, animated: true)
     }
 }
