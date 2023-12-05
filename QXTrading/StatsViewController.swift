@@ -128,7 +128,7 @@ class StatsViewController: UIViewController {
     
     private func constraintsSetup() {
         NSLayoutConstraint.activate([
-            cardAccount.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            cardAccount.topAnchor.constraint(equalTo: view.topAnchor),
             cardAccount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             cardAccount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             cardAccount.heightAnchor.constraint(equalToConstant: 114),

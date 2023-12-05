@@ -9,6 +9,9 @@ import UIKit
 
 class ScoreboardViewController: UIViewController {
 
+    private var userProfileImage: UIImage?
+    private var userName: String?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(ScoreboardCell.self, forCellReuseIdentifier: ScoreboardCell.reuseID)
@@ -25,9 +28,11 @@ class ScoreboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUserProfile()
         view.addSubview(tableView)
         view.backgroundColor = R.color.background()
         constraintsSetup()
+        tableView.reloadData()
     }
     
     private func constraintsSetup() {
@@ -37,6 +42,17 @@ class ScoreboardViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    private func setupUserProfile() {
+        if let imageData = UserDefaults.standard.data(forKey: "userProfileImage"),
+           let image = UIImage(data: imageData) {
+            userProfileImage = image
+        }
+
+        if let username = UserDefaults.standard.string(forKey: "username") {
+            userName = username
+        }
     }
 }
 
@@ -86,7 +102,12 @@ extension ScoreboardViewController: UITableViewDataSource, UITableViewDelegate {
             cell.percentLabel.textColor = .white.withAlphaComponent(0.50)
         case 5:
             cell.cellPlace.image = R.image.place5()
-            cell.cellName.text = "Unknown Unnamed"
+            if let userName = userName, let userProfileImage = userProfileImage {
+                cell.cellAva.image = userProfileImage
+                cell.cellName.text = userName
+            } else {
+                cell.cellName.text = "Unknown Unnamed"
+            }
             cell.percentLabel.text = "-"
             cell.backgroundColor = R.color.tabBarTint()
             cell.layer.cornerRadius = 20

@@ -13,6 +13,17 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         addedTabBarSetup()
+        
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundColor = R.color.tabbarBackground()
+            tabBar.standardAppearance = tabBarAppearance
+            if #available(iOS 15.0, *) {
+                tabBar.scrollEdgeAppearance = tabBarAppearance
+            }
+        } else {
+            tabBar.backgroundColor = R.color.tabbarBackground()
+        }
     }
         
     private func addedTabBarSetup() {

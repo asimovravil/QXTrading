@@ -25,6 +25,7 @@ final class ScoreboardCell: UITableViewCell {
         imageView.image = R.image.accountImageCard()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 20
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
