@@ -119,12 +119,59 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    private let popWellDoneImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = R.image.wellDone()
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.isHidden = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let popPassTheTestImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = R.image.passTheTest()
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.isHidden = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let popWellDoneButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Okay", for: .normal)
+        button.titleLabel?.textColor = .blue
+        button.titleLabel?.font = R.font.ibmPlexSansSemiBold(size: 17)
+        button.isHidden = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let remindLaterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Remind later", for: .normal)
+        button.titleLabel?.textColor = .blue
+        button.titleLabel?.font = R.font.ibmPlexSans(size: 17)
+        button.isHidden = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let startTestButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Start test", for: .normal)
+        button.titleLabel?.textColor = .blue
+        button.titleLabel?.font = R.font.ibmPlexSansSemiBold(size: 17)
+        button.isHidden = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let currentDay = 1
-
         view.addSubview(cardAccount)
         view.addSubview(imageAccount)
         view.addSubview(labelAccount)
@@ -135,11 +182,20 @@ class HomeViewController: UIViewController {
         view.addSubview(circularDaysLabel)
         view.addSubview(labelStudy)
         view.addSubview(tableView)
+        view.addSubview(popWellDoneImage)
+        view.addSubview(popPassTheTestImage)
+        view.addSubview(popWellDoneButton)
+        view.addSubview(remindLaterButton)
+        view.addSubview(startTestButton)
         cardAccount.addSubview(circularProgressBar)
         view.backgroundColor = R.color.background()
         constraintsSetup()
         navigationBarSetup()
         updateProgress(currentDay: 1)
+        
+        popWellDoneButton.addTarget(self, action: #selector(popWellDoneButtonMetod), for: .touchUpInside)
+        remindLaterButton.addTarget(self, action: #selector(remindLaterButtonMetod), for: .touchUpInside)
+        startTestButton.addTarget(self, action: #selector(startTestButtonMetod), for: .touchUpInside)
         
         if let username = UserDefaults.standard.string(forKey: "username") {
             labelAccount.text = username
@@ -183,6 +239,22 @@ class HomeViewController: UIViewController {
         
         cardAccount.layer.cornerRadius = 20
         imageAccount.layer.cornerRadius = 30
+    }
+    
+    @objc func popWellDoneButtonMetod() {
+        popWellDoneImage.isHidden = true
+        popWellDoneButton.isHidden = true
+    }
+    
+    @objc func remindLaterButtonMetod() {
+        popPassTheTestImage.isHidden = true
+        remindLaterButton.isHidden = true
+        startTestButton.isHidden = true
+    }
+    
+    @objc func startTestButtonMetod() {
+        let startTestVC = QuizTestViewController()
+        self.navigationController?.pushViewController(startTestVC, animated: true)
     }
     
     func formattedText(currentDay: Int, totalDays: Int) -> NSAttributedString {
@@ -259,6 +331,21 @@ class HomeViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            popWellDoneImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            popWellDoneImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            popPassTheTestImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            popPassTheTestImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            popWellDoneButton.bottomAnchor.constraint(equalTo: popWellDoneImage.bottomAnchor, constant: -6),
+            popWellDoneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            remindLaterButton.bottomAnchor.constraint(equalTo: popPassTheTestImage.bottomAnchor, constant: -6),
+            remindLaterButton.leadingAnchor.constraint(equalTo: popPassTheTestImage.leadingAnchor, constant: 40),
+            
+            startTestButton.bottomAnchor.constraint(equalTo: popPassTheTestImage.bottomAnchor, constant: -6),
+            startTestButton.trailingAnchor.constraint(equalTo: popPassTheTestImage.trailingAnchor, constant: -54),
         ])
     }
     
