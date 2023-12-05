@@ -9,6 +9,10 @@ import UIKit
 
 final class QuizTestViewController: UIViewController {
     
+    var onQuizCompletion: ((Int, Int) -> Void)?
+    private var totalQuestions = 0
+    private var userCorrectAnswers = 0
+    
     private var answeredQuestionsCount = 0
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -45,7 +49,11 @@ final class QuizTestViewController: UIViewController {
     }
     
     private func navigateToLeaderboard() {
-
+        let resultVC = ResultViewController()
+        resultVC.modalPresentationStyle = .fullScreen
+        resultVC.correctAnswers = userCorrectAnswers
+        resultVC.totalQuestions = totalQuestions
+        present(resultVC, animated: true, completion: nil)
     }
     
     private func navigationBarSetup() {
@@ -94,16 +102,7 @@ final class QuizTestViewController: UIViewController {
     }
 }
 
-extension QuizTestViewController: UITableViewDataSource, UITableViewDelegate, BinanceProtocolTest {
-    func didAnswerQuestion(correctAnswers: Int) {
-        tableView.reloadData()
-
-        answeredQuestionsCount += 1
-
-        if answeredQuestionsCount == 4 {
-            navigateToLeaderboard()
-        }
-    }
+extension QuizTestViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -114,6 +113,7 @@ extension QuizTestViewController: UITableViewDataSource, UITableViewDelegate, Bi
             fatalError("Could not cast to QuizTestTableViewCell")
         }
         cell.navigationController = self.navigationController
+        cell.totalQuestions = 5
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
         cell.delegate = self
@@ -125,3 +125,16 @@ extension QuizTestViewController: UITableViewDataSource, UITableViewDelegate, Bi
     }
 }
 
+extension QuizTestViewController: BinanceProtocolTest {
+    func didAnswerQuestion(correctAnswers: Int, totalQuestions: Int) {
+        self.userCorrectAnswers = correctAnswers
+        self.totalQuestions = totalQuestions
+        tableView.reloadData()
+        
+        answeredQuestionsCount += 1
+
+        if answeredQuestionsCount == 5 {
+            navigateToLeaderboard()
+        }
+    }
+}

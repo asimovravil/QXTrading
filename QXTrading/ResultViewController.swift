@@ -10,6 +10,8 @@ import UIKit
 class ResultViewController: UIViewController {
     
     var percentComplete = 0
+    var correctAnswers: Int = 0
+    var totalQuestions: Int = 0
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -151,7 +153,17 @@ class ResultViewController: UIViewController {
         
         circularProgressBar.progressBarMode = .percentageBased
         circularProgressBar.setProgressWithAnimation(duration: 1, value: percentComplete)
+        
+        updateUIWithResults(correctAnswers: correctAnswers, totalQuestions: totalQuestions)
     }
+    
+    func updateUIWithResults(correctAnswers: Int, totalQuestions: Int) {
+        let percentage = totalQuestions > 0 ? (correctAnswers * 100) / totalQuestions : 0
+        circularPercent.text = "\(percentage)%"
+        circularAmountLabel.text = "\(correctAnswers)/\(totalQuestions)"
+        circularProgressBar.setProgressWithAnimation(duration: 1, value: percentage)
+    }
+
     
     private func constraintsSetup() {
         NSLayoutConstraint.activate([

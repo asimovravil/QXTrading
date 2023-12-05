@@ -8,8 +8,9 @@
 import UIKit
 
 protocol BinanceProtocolTest: AnyObject {
-    func didAnswerQuestion(correctAnswers: Int)
+    func didAnswerQuestion(correctAnswers: Int, totalQuestions: Int)
 }
+
 
 final class QuizTestTableViewCell: UITableViewCell {
     
@@ -20,6 +21,7 @@ final class QuizTestTableViewCell: UITableViewCell {
     var quizBrain = GraphicsQuiz()
     private var answerSelected = false
     var userCorrectAnswers = 0
+    var totalQuestions: Int = 0
     weak var navigationController: UINavigationController?
     
     // MARK: - UI
@@ -191,7 +193,7 @@ final class QuizTestTableViewCell: UITableViewCell {
                 self.quizBrain.nextQuestion()
                 self.updateUI()
                 self.answerSelected = false
-                self.delegate?.didAnswerQuestion(correctAnswers: self.userCorrectAnswers)
+                self.delegate?.didAnswerQuestion(correctAnswers: self.userCorrectAnswers, totalQuestions: self.totalQuestions)
             }
         }
     }
