@@ -33,7 +33,7 @@
 		F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */; };
 		F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */; };
 		F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */; };
-		F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */; };
+		F1285E6E2B1DF3E200CCDCB9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6D2B1DF3E200CCDCB9 /* EditProfileViewController.swift */; };
 		F1285E702B1DFB8600CCDCB9 /* IndicatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */; };
 		F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */; };
 		F1285E762B1ED1C300CCDCB9 /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */; };
@@ -43,6 +43,7 @@
 		F1285E802B1ED61600CCDCB9 /* GraphicsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */; };
 		F1285E812B1ED61600CCDCB9 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */; };
 		F1285E862B1EDF8100CCDCB9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */; };
+		F1285E992B1F42B900CCDCB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +73,7 @@
 		F1285E632B1DC5FA00CCDCB9 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		F1285E662B1DD55E00CCDCB9 /* DayCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCategoryViewController.swift; sourceTree = "<group>"; };
 		F1285E692B1DED5600CCDCB9 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
-		F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1285E6D2B1DF3E200CCDCB9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		F1285E6F2B1DFB8600CCDCB9 /* IndicatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsViewController.swift; sourceTree = "<group>"; };
 		F1285E722B1ECD1E00CCDCB9 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		F1285E752B1ED1C300CCDCB9 /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsQuiz.swift; sourceTree = "<group>"; };
 		F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 		F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,8 @@
 				F1285E7C2B1ED61600CCDCB9 /* GraphicsQuiz.swift */,
 				F1285E7D2B1ED61600CCDCB9 /* Graphics.swift */,
 				F1285E852B1EDF8100CCDCB9 /* ResultViewController.swift */,
-				F1285E6D2B1DF3E200CCDCB9 /* ProfileViewController.swift */,
+				F1285E982B1F42B900CCDCB9 /* ProfileViewController.swift */,
+				F1285E6D2B1DF3E200CCDCB9 /* EditProfileViewController.swift */,
 				F1285E602B1DBB0300CCDCB9 /* SettingsViewController.swift */,
 				F1285E222B18A4C100CCDCB9 /* Assets.xcassets */,
 				F1285E242B18A4C100CCDCB9 /* LaunchScreen.storyboard */,
@@ -266,8 +269,9 @@
 				F1285E6A2B1DED5600CCDCB9 /* GlossaryViewController.swift in Sources */,
 				F1285E562B1B238400CCDCB9 /* TabBarViewController.swift in Sources */,
 				F1285E672B1DD55E00CCDCB9 /* DayCategoryViewController.swift in Sources */,
+				F1285E992B1F42B900CCDCB9 /* ProfileViewController.swift in Sources */,
 				F1285E642B1DC5FB00CCDCB9 /* PrivacyViewController.swift in Sources */,
-				F1285E6E2B1DF3E200CCDCB9 /* ProfileViewController.swift in Sources */,
+				F1285E6E2B1DF3E200CCDCB9 /* EditProfileViewController.swift in Sources */,
 				F1285E4C2B19C3D800CCDCB9 /* OnboList.swift in Sources */,
 				F1285E732B1ECD1E00CCDCB9 /* Indicator.swift in Sources */,
 				F1285E7F2B1ED61600CCDCB9 /* QuizTestViewController.swift in Sources */,
